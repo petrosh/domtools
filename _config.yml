@@ -21,6 +21,12 @@ defaults:
     values:
       layout: "default"
 
+# Gems
+gems:
+  - jekyll-github-metadata
+
+repository: petrosh/domtools
+
 # Build settings
 highlighter: rouge
 markdown: kramdown
