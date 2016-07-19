@@ -22,7 +22,7 @@ function coo(response){
 		var code = G.domNew('code');
 		G.ac(G.domNew('a', commessa.sha.substr(0,7), {href: commessa.html_url}), code);
 		G.ac(code, li);
-		li.innerHTML += ' &ndash; ' + commessa.commit.message;
+		li.innerHTML += ' &ndash; ' + commessa.commit.date + ' &ndash; ' + commessa.commit.message;
 		G.ac(li, ul);
 	}
 	if (response.meta.Link) G.ac(G.pagination(response.meta.Link), G.query('section'));
