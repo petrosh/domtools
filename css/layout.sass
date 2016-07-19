@@ -5,6 +5,7 @@ $brand-color:			 #4078c0
 $lightred:				 #c04040
 
 $header-text-color:rgba(255,255,255,0.5)
+$transparent-white: rgba(255,255,255,0.1)
 
 $white:						 #fff
 $light-grey-color: #f5f5f5
@@ -90,6 +91,8 @@ header
 		margin: .5em 0 0 0
 	a
 		color: $header-text-color
+		&:active
+			color: $transparent-white
 
 footer
 	background-color: $light-grey-color
