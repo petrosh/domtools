@@ -18,12 +18,13 @@ var G = {
 	get repoOwner () { return this.urlArray[0]; },
 	get repoFullname () { return [this.repoOwner, this.repoName].join('/'); },
 	get repoLink () {
-		var url = ['https://github.com', G.repoFullname, G.repoFolder].join('/');
+		var treePath = (G.repoFolder !== '') ? 'tree/gh-pages/' : '';
+		var url = ['https://github.com', G.repoFullname, treePath + G.repoFolder].join('/');
 		return G.domNew('a', 'Repository', {href: url});
 	},
 	get repoSshot () {
 		var url =	'https://developer.microsoft.com/en-us/microsoft-edge/tools/screenshots/#https://' + G.repoOwner + ['.github.io', G.repoName, G.repoFolder].join('/');
-		return G.domNew('a', 'Screenshots', {href: url});
+		return G.domNew('a', 'Screenshots', {href: url, target: '_blank'});
 	},
 	get repoHome () { return 'https://' + this.repoOwner + '.github.io/' + this.repoName; },
 	get repoApi () { return [this.apiRepos, this.repoFullname].join('/'); },
