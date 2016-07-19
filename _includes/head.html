@@ -17,6 +17,6 @@
 	{% endfor %}{% endif %}
 
 	<!-- LOAD PAGE SCRIPTS -->
-	{% if page.js %}{% for script in page.js %}<script src="{{site.baseurl}}/js/{{ script }}.js"></script>
+	{% if page.js %}{% for script in page.js %}<script src="{{site.baseurl}}/js/{{ script }}.js" async></script>
 	{% endfor %}{% endif %}
 </head>
