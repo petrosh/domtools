@@ -1,0 +1,28 @@
+# Site settings
+title: domtools
+description: Tools for the Document Object Module
+baseurl: /domtools
+url: http://petrosh.it/domtools
+github_username:  petrosh
+
+# Files
+js:
+css:
+  - normalize
+  - layout
+  - github-markdown
+  - github-syntax
+
+# Defaults
+defaults:
+  -
+    scope:
+      path: "" # all files in the project
+    values:
+      layout: "default"
+
+# Build settings
+highlighter: rouge
+markdown: kramdown
+kramdown:
+  auto_ids: true

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+
+	{% include head.html %}
+
+	<body class="{{page.color}} {{page.width}}">
+
+		{% include header.html %}
+
+		<main>
+			<section class="markdown-body">
+				{{ content }}
+			</section>
+		</main>
+
+		{% include footer.html %}
+
+	</body>
+
+</html>
