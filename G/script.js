@@ -6,7 +6,7 @@ G.req([G.repoApi, 'contents', G.repoFolder, 'README.md'].join('/'), print, 'get'
 
 function print () {
 	G.query('section').innerHTML += this.toString();
-	G.ac(G.domNew('h1', 'Commits'), G.query('section'));
+	G.ac(G.domNew('h1', 'Repository commits'), G.query('section'));
 	// request repo commits
 	G.loadScript([G.repoApi, 'commits?callback=coo'].join('/'));
 }

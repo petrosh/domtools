@@ -1,10 +1,10 @@
 Little helper
 
-## Variabiles
-
 ## Functions
 
-### Append `G.ac(element[, parent])`  
+### Append
+
+**`G.ac(element[, parent])`**
 
 Append an element or elements in a array to a parent, or to `document.body`.
 
@@ -35,7 +35,9 @@ parent.appendChild(element_2);
 // ...
 ```
 
-### Load script `G.loadScript(url)`  
+### Load script
+
+**`G.loadScript(url)`**
 
 Append a `script` tag to `document.head`.
 
@@ -54,7 +56,9 @@ script.src = url;
 head.appendChild(script);
 ```
 
-### Dom new `G.domNew(tag[, inner, attributes])`  
+### Dom new
+
+**`G.domNew(tag[, inner, attributes])`**
 
 Create and return a new DOM element with optional `innerHTML` and attributes.
 
@@ -78,7 +82,9 @@ a.innerHTML = 'click here';
 a.href = 'http://example.com';
 ```
 
-### Query selector `G.query(selector[, parent])`  
+### Query selector
+
+**`G.query(selector[, parent])`**
 
 Shortcut for `element.querySelector()` and `document.querySelector()`.
 
@@ -97,7 +103,9 @@ var element = G.query('p', parent);
 var element = parent.querySelector('p');
 ```
 
-### Request `G.req(url[, callback, method, accept, data])`  
+### Request
+
+**`G.req(url[, callback, method, accept, data])`**
 
 Perform a `XMLHttpRequest` and apply response to `callback` function.
 
