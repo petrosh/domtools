@@ -1,6 +1,10 @@
-Little helper
+A little helper
 
-## Functions
+- [Append](#append)
+- [Load script](#load-script)
+- [Dom new](#dom-new)
+- [Query selector](#query-selector)
+- [Request](#request)
 
 ### Append
 
