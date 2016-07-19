@@ -667,3 +667,9 @@ Author https://github.com/sindresorhus
   position: relative;
   border-color: #4183c4;
 }
+
+/* ADDED 2016-07-19 */
+.markdown-body table code {
+  background-color: transparent;
+  font-weight: bold;
+}
