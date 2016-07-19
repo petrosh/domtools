@@ -1,20 +1,23 @@
 ---
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
-$brand-color:			 #4078c0
-$lightred:				 #c04040
+// Page brand colors
+$brand-color:			#4078c0
+$lightred:				#c04040
+$forest:					#40bf46
+$melma:						#004040
 
 $header-text-color:rgba(255,255,255,0.5)
 $transparent-white: rgba(255,255,255,0.1)
 
-$white:						 #fff
-$light-grey-color: #f5f5f5
+$white:						#fff
+$light-grey-color:#f5f5f5
 
 // Width of the content (is initial if body.wide)
-$content-width:    50rem
+$content-width:   50rem
 
-$on-palm:          600px
-$on-laptop:        800px
+$on-palm:         600px
+$on-laptop:       800px
 
 // Use media queries like this:
 // @include media-query($on-palm) {
@@ -123,3 +126,15 @@ body.lightred
 		color: $lightred
 	header
 		background-color: $lightred
+
+body.forest
+	main a
+		color: $forest
+	header
+		background-color: $forest
+
+body.melma
+	main a
+		color: $melma
+	header
+		background-color: $melma
