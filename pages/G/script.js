@@ -4,7 +4,7 @@ G.req([G.repoApi, 'contents', 'pages', G.repoFolder, 'README.md'].join('/'), pri
 
 function print () {
 	G.query('section').innerHTML += this.toString();
-	G.ac(G.domNew('h1', 'Repository commits'), G.query('section'));
+	G.ac(G.domNew('h1', 'Repository commits', {id: 'repository-commits'}), G.query('section'));
 	// request repo commits
 	// G.loadScript('https://api.github.com/repos/petrosh/domtools/commits?callback=coo');
 	G.loadScript([G.repoApi, 'commits?callback=coo'].join('/'));

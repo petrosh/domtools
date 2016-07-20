@@ -16,7 +16,7 @@ js:
 
 **Steps**
 
-1. Show this folder `README.md`
-1. Show this repository commits
+1. Show this-folder `README.md`
+1. Show this-repository commits
 
 ---

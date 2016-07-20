@@ -1,10 +1,10 @@
 A little helper
 
-- [Append](#append)
-- [Load script](#load-script)
-- [Dom new](#dom-new)
-- [Query selector](#query-selector)
-- [Request](#request)
+- [Append](#user-content-append)
+- [Load script](#user-content-load-script)
+- [Dom new](#user-content-dom-new)
+- [Query selector](#user-content-query-selector)
+- [Request](#user-content-request)
 
 ### Append
 

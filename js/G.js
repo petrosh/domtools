@@ -110,11 +110,11 @@ var G = {
 			for (var i = 0; i < links.length; i++) {
 				if (links[i][1].rel === 'prev') {
 					linkElement = G.domNew('a', 'Previous page', {href: links[i][0]});
-					nextLink.addEventListener('click', G.paginationClick);
+					linkElement.addEventListener('click', G.paginationClick);
 				}
 				if (links[i][1].rel === 'next') {
 					linkElement = G.domNew('a', 'Next page', {href: links[i][0]});
-					nextLink.addEventListener('click', G.paginationClick);
+					linkElement.addEventListener('click', G.paginationClick);
 				}
 			}
 		}
