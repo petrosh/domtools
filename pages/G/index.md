@@ -2,7 +2,7 @@
 title: G
 description: All is one
 permalink: /G/
-color: lightred
+color: cadetblue
 screenshot: true
 js:
   - G
