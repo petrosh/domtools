@@ -5,12 +5,11 @@
 
 	<title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
 	<meta name="description" content="{% if page.excerpt %}{{ page.excerpt | strip_html | strip_newlines | truncate: 160 }}{% else %}{{ site.description }}{% endif %}">
+	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.url }}">
 
 	<!-- LOAD SITE STYLES -->
 	{% if site.css %}{% for style in site.css %}<link rel="stylesheet" href="{{site.baseurl}}/css/{{ style }}.css">
 	{% endfor %}{% endif %}
-
-	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 
 	<!-- LOAD SITE SCRIPTS -->
 	{% if site.js %}{% for script in site.js %}<script src="{{site.baseurl}}/js/{{ script }}.js"></script>
