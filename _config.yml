@@ -2,7 +2,7 @@
 title: domtools
 description: Tools for the Document Object Module
 baseurl: /domtools
-url: http://petrosh.it/domtools
+url: http://petrosh.github.io/domtools
 github_username:  petrosh
 
 # Files
@@ -20,6 +20,7 @@ defaults:
       path: "" # all files in the project
     values:
       layout: "default"
+      screenshot: false
 
 # Gems
 gems:

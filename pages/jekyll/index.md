@@ -3,6 +3,7 @@ title: Jekyll
 description: Live variables
 color: forest
 permalink: /jekyll
+screenshot: true
 ---
 
 ### Site

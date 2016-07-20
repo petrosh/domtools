@@ -36,7 +36,7 @@ var G = {
 	},
 	gotSha: function (response) {
 		// var file = 'script.js';
-		var file = (G.repoFolder) ? G.repoFolder + '/script.js' : 'script.js';
+		var file = (G.repoFolder) ? 'pages/' + G.repoFolder + '/script.js' : 'script.js';
 		if (response.data.message == 'Not Found') return G.loadScript(file);
 		G.refs.ghpages = response.data.object.sha;
 		return G.loadScript([G.rawCdn, G.refs.ghpages, file].join('/'));
