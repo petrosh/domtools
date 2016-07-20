@@ -11,7 +11,7 @@ String.prototype.timeAgo = function () {
 	var date = new Date(this);
 	// Account for timezone
 	var offset = new Date().getTimezoneOffset();
-	var seconds = Math.floor((new Date() - date) / 1000) + (60 * -offset);
+	var seconds = Math.floor((new Date() - date) / 1000) + (60 * offset);
 	// Start checking
 	var interval = Math.floor(seconds / 31536000);
 	if (interval > 0.9) return config(interval, 'year');
@@ -26,4 +26,42 @@ String.prototype.timeAgo = function () {
 	interval = Math.floor(seconds / 60);
 	if (interval > 1) return config(interval, 'minute');
 	return 'just now';
+};
+
+/*
+*
+* ele.appendChilds([element_1, element_2, ...])
+*
+*/
+Element.prototype.appendChilds = function (elementsArray) {
+	if (elementsArray.constructor === HTMLElement) {
+		if (this.appendChild(elementsArray)) this.appendChild(elementsArray);
+		return elementsArray;
+	} else if (elementsArray.constructor === Array) {
+		for (var i = 0; i < elementsArray.length; i++) {
+			if (this.appendChild(elementsArray[i])) this.appendChild(elementsArray[i]);
+		}
+		return this;
+	}
+};
+
+/*
+*
+* ele.createCustomElement(tag[, inner, attributes])
+*
+*/
+document.createCustomElement = function (tag, inner, attributes) {
+	var element;
+	if (document.createElement(tag)) element = document.createElement(tag); else return false;
+	if (inner) {
+		element.innerHTML = inner;
+	}
+	if (attributes && attributes.constructor === Object) {
+		for (var key in attributes) {
+			if (attributes.hasOwnProperty(key)) {
+				element.setAttribute(key, attributes[key]);
+			}
+		}
+	}
+	return element;
 };
