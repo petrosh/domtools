@@ -10,7 +10,7 @@ var G = {
 	get repoFolder () {
 		var arr = [];
 		var folders = this.urlSlash;
-		for (var i = 1; i < folders.length - 1; i++) {
+		for (var i = 2; i < folders.length - 1; i++) {
 			if (folders[i] !== '') arr.push(folders[i]);
 		}
 		return (arr.length) ? arr.join('/') : '';
