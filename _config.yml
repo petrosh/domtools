@@ -9,10 +9,10 @@ github_username:  petrosh
 js:
 css:
   - normalize
-  - layout
   - github-markdown
   - github-syntax
   - primer-syntax
+  - layout
 
 # Defaults
 defaults:
