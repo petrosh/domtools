@@ -1,5 +1,5 @@
 // include README
-G.req([G.repoApi, 'contents', G.repoFolder, 'README.md'].join('/'), print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
+G.req([G.repoApi, 'contents', 'pages', G.repoFolder, 'README.md'].join('/'), print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
 // G.req('https://api.github.com/repos/petrosh/domtools/contents/G/README.md', print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
 
 function print () {
