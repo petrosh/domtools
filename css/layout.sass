@@ -6,6 +6,9 @@ $brand-color:			#4078c0
 $lightred:				#c04040
 $forest:					#40bf46
 $melma:						#009688
+$cave:						#a45e0a
+
+$page-colours: (lightred, $lightred), (forest, $forest), (melma, $melma), (cave, $cave)
 
 $header-text-color:rgba(255,255,255,0.5)
 $transparent-white: rgba(255,255,255,0.1)
@@ -14,17 +17,17 @@ $white:						#fff
 $light-grey-color:#f5f5f5
 
 // Width of the content (is initial if body.wide)
-$content-width:   50rem
+$content-width:	 50rem
 
-$on-palm:         600px
-$on-laptop:       800px
+$on-palm:				 600px
+$on-laptop:			 800px
 
 // Use media queries like this:
 // @include media-query($on-palm) {
-//     .wrapper {
-//         padding-right: $spacing-unit / 2
-//         padding-left: $spacing-unit / 2
-//     }
+//		 .wrapper {
+//				 padding-right: $spacing-unit / 2
+//				 padding-left: $spacing-unit / 2
+//		 }
 // }
 // @mixin media-query($device) {
 // 	@media screen and (max-width: $device) {
@@ -53,7 +56,7 @@ body
 		background-repeat: no-repeat
 		background-position: center
 	& main, & header, & footer
-		padding: 2em
+		padding: 3rem
 	&
 		main,
 		header h1,
@@ -124,20 +127,33 @@ footer
 // 	padding: 1em
 
 // COLORS
-body.lightred
-	main a
-		color: $lightred
-	header
-		background-color: $lightred
 
-body.forest
-	main a
-		color: $forest
-	header
-		background-color: $forest
-
-body.melma
-	main a
-		color: $melma
-	header
-		background-color: $melma
+@each $brand, $color in $page-colours
+	body.#{$brand}
+		main a
+			color: $color
+		header
+			background-color: $color
+// body.lightred
+// 	main a
+// 		color: $lightred
+// 	header
+// 		background-color: $lightred
+//
+// body.forest
+// 	main a
+// 		color: $forest
+// 	header
+// 		background-color: $forest
+//
+// body.melma
+// 	main a
+// 		color: $melma
+// 	header
+// 		background-color: $melma
+//
+// body.cave
+// 	main a
+// 		color: $cave
+// 	header
+// 		background-color: $cave
