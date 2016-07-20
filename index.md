@@ -1,4 +1,5 @@
 ---
+screenshot: true
 ---
 
 {% for p in site.pages %}

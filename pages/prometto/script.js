@@ -6,7 +6,7 @@ function get(url) {
 	return new Promise(function(resolve, reject) {
 		// Do the usual XHR stuff
 		var req = new XMLHttpRequest();
-		req.open('GET', 'book/' + url);
+		req.open('GET', 'pages/prometto/book/' + url);
 
 		req.onload = function() {
 			document.body.classList.remove('spinner');
@@ -56,6 +56,7 @@ getJSON('story.json').then(function(story) {
 	// Now we have the chapters jsons in order! Loop through…
 	chapters.forEach(function(chapter) {
 		// …and add to the page
+		addHtmlToPage('<h3>Chapter ' + chapter.chapter + '</h3>');
 		addHtmlToPage(chapter.html);
 	});
 }).catch(function(err) {
