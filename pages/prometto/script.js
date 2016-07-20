@@ -43,25 +43,53 @@ function getJSON(url) {
 	return get(url).then(JSON.parse);
 }
 
-getJSON('story.json').then(function(story) {
-	addHtmlToPage(story.heading);
+// getJSON('story.json').then(function(story) {
+// 	addHtmlToPage(story.heading);
+//
+// 	// Take an array of promises and wait on them all
+// 	return Promise.all(
+// 		// Map our array of chapter urls to
+// 		// an array of chapter json promises
+// 		story.chapterUrls.map(getJSON)
+// 	);
+// }).then(function(chapters) {
+// 	// Now we have the chapters jsons in order! Loop through…
+// 	chapters.forEach(function(chapter) {
+// 		// …and add to the page
+// 		addHtmlToPage('<h3>Chapter ' + chapter.chapter + '</h3>');
+// 		addHtmlToPage(chapter.html);
+// 	});
+// }).catch(function(err) {
+// 	// catch any error that happened so far
+// 	addTextToPage('<p>Argh, broken: ' + err.message + '</p>');
+// }).then(function() {
+// 	addTextToPage('<p>All done</p>');
+// });
 
-	// Take an array of promises and wait on them all
-	return Promise.all(
-		// Map our array of chapter urls to
-		// an array of chapter json promises
-		story.chapterUrls.map(getJSON)
-	);
-}).then(function(chapters) {
-	// Now we have the chapters jsons in order! Loop through…
+function errore(err) {
+	addTextToPage('<p>Argh, broken: ' + err.message + '</p>');
+}
+
+// START
+
+var loadChapters = function (story) {
+	addHtmlToPage(story.heading);
+	return Promise.all(	story.chapterUrls.map(getJSON) );
+};
+
+function loopChapters(chapters) {
 	chapters.forEach(function(chapter) {
-		// …and add to the page
 		addHtmlToPage('<h3>Chapter ' + chapter.chapter + '</h3>');
 		addHtmlToPage(chapter.html);
 	});
-}).catch(function(err) {
-	// catch any error that happened so far
-	addTextToPage('<p>Argh, broken: ' + err.message + '</p>');
-}).then(function() {
-	addTextToPage('<p>All done</p>');
-});
+}
+
+function allDone () {
+	addHtmlToPage('<p>All done</p>');
+}
+
+getJSON('story.json')
+	.then(loadChapters)
+	.then(loopChapters)
+	.catch(errore)
+	.then(allDone);

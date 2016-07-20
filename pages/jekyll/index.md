@@ -6,18 +6,22 @@ permalink: /jekyll/
 screenshot: true
 ---
 
-### Site
+### Jekyll `site`
 
 |`{% raw %}{{{% endraw %} site.url {% raw %}}}{% endraw %}`|<code>{{ site.url }}</code>|
 |`{% raw %}{{{% endraw %} site.baseurl {% raw %}}}{% endraw %}`|<code>{{ site.baseurl }}</code>|
 
-### Page
+<br>
+
+### Jekyll `page`
 
 |`{% raw %}{{{% endraw %} page.url {% raw %}}}{% endraw %}`|<code>{{ page.url }}</code>|
 |`{% raw %}{{{% endraw %} page.permalink {% raw %}}}{% endraw %}`|<code>{{ page.permalink }}</code>|
 |`{% raw %}{{{% endraw %} page.path {% raw %}}}{% endraw %}`|<code>{{ page.path }}</code>|
 
-### GitHub
+<br>
+
+### Jekyll `site.github`
 
 |`{% raw %}{{{% endraw %} site.github.owner_name {% raw %}}}{% endraw %}`|<code>{{ site.github.owner_name }}</code>|
 |`{% raw %}{{{% endraw %} site.github.project_title {% raw %}}}{% endraw %}`|<code>{{ site.github.project_title }}</code>|

@@ -12,6 +12,7 @@ css:
   - layout
   - github-markdown
   - github-syntax
+  - primer-syntax
 
 # Defaults
 defaults:
@@ -32,4 +33,6 @@ repository: petrosh/domtools
 highlighter: rouge
 markdown: kramdown
 kramdown:
+  input: GFM
+  syntax_highlighter: rouge
   auto_ids: true
