@@ -2,7 +2,7 @@
 title: Jekyll
 description: Live variables
 color: forest
-permalink: /jekyll
+permalink: /jekyll/
 screenshot: true
 ---
 

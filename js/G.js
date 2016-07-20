@@ -10,7 +10,7 @@ var G = {
 	get repoFolder () {
 		var arr = [];
 		var folders = this.urlSlash;
-		for (var i = 2; i < folders.length -1; i++) {
+		for (var i = 1; i < folders.length - 1; i++) {
 			if (folders[i] !== '') arr.push(folders[i]);
 		}
 		return (arr.length) ? arr.join('/') : '';
@@ -35,11 +35,14 @@ var G = {
 		return true;
 	},
 	gotSha: function (response) {
-		// var file = 'script.js';
-		var file = (G.repoFolder) ? 'pages/' + G.repoFolder + '/script.js' : 'script.js';
+		var file = 'script.js';
+		// var file = (G.repoFolder) ? 'pages/' + G.repoFolder + '/script.js' : 'script.js';
+		// var file = window.location.href + 'script.js';
+		if (window.location.hostname == "127.0.0.1")
+			file = window.location.origin + '/pages' + window.location.pathname + 'script.js';
 		if (response.data.message == 'Not Found') return G.loadScript(file);
 		G.refs.ghpages = response.data.object.sha;
-		return G.loadScript([G.rawCdn, G.refs.ghpages, file].join('/'));
+		return G.loadScript([G.rawCdn, G.refs.ghpages, 'pages', file].join('/'));
 	},
 	ac: function (element, parent) {
 		var target = (parent || document.body);

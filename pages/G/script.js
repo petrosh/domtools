@@ -1,6 +1,3 @@
-// Append links and ref to footer
-G.ac(G.ac([G.repoLink, G.repoSshot, G.domNew('span', G.refs.ghpages, {class: 'float-right'})], G.domNew('p')), G.query('footer'));
-
 // include README
 G.req([G.repoApi, 'contents', G.repoFolder, 'README.md'].join('/'), print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
 // G.req('https://api.github.com/repos/petrosh/domtools/contents/G/README.md', print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
