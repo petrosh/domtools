@@ -22,17 +22,14 @@ Usage
 
 ```js
 G.ac(element);
-
 // equivalent to
 document.body.appendChild(element);
 
 G.ac(element, parent);
-
 // equivalent to
 parent.appendChild(element);
 
 G.ac([element_1, element_2, ... ], parent);
-
 // equivalent to
 parent.appendChild(element_1);
 parent.appendChild(element_2);
@@ -52,7 +49,6 @@ Usage
 
 ```js
 G.loadScript('script.js');
-
 // equivalent to
 var head = document.getElementsByTagName('head')[0];
 var script = document.createElement('script');
@@ -79,7 +75,6 @@ Usage
 
 ```js
 var element = G.domNew('a', 'click here', {href: 'http://example.com'});
-
 // equivalent to
 var element = document.createElement('a');
 a.innerHTML = 'click here';
@@ -102,7 +97,6 @@ Usage
 
 ```js
 var element = G.query('p', parent);
-
 // equivalent to
 var element = parent.querySelector('p');
 ```
@@ -130,10 +124,10 @@ Perform a `XMLHttpRequest` and apply response to `callback` function.
 
 ```js
 G.req(url, print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
-
 // equivalent to
 var xhr = new XMLHttpRequest();
 xhr.open('get', url, true);
 xhr.setRequestHeader('Accept', 'application/vnd.github.v3.html');
 xhr.send(data);
+// and check xhr.status etc.
 ```
