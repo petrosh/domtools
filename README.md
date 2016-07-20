@@ -3,6 +3,6 @@ permalink: /
 ---
 **Tools for the Document Object Module**
 
-- [G](/G)
+- [G](G)
 - [Jekyll](jekyll)
 - [Prometto](prometto)
