@@ -1,7 +1,7 @@
 ---
 title: Prometto
-permalink: /prometto
-description: Promise, request and print a json book
+permalink: /prometto/
+description: Promise request and print a json book
 color: melma
 js:
   - promise

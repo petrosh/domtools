@@ -81,13 +81,16 @@ a
 
 header
 	background-color: $brand-color
-	color: white
+	color: $header-text-color
 	h1
 		font-weight: 200
 		margin: 0
 		padding: 0
+		color: white
+		span
+			color: $header-text-color
+
 	p
-		color: $header-text-color
 		font-size: 1.3em
 		font-weight: 200
 		padding: 0
@@ -95,7 +98,7 @@ header
 	a
 		color: $header-text-color
 		&:active
-			color: $transparent-white
+			color: white
 
 footer
 	background-color: $light-grey-color

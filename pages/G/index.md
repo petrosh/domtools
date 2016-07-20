@@ -1,8 +1,9 @@
 ---
 title: G
 description: All is one
-permalink: /G
+permalink: /G/
 color: lightred
+screenshot: true
 js:
   - G
   - naledi

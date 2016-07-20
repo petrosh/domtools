@@ -6,7 +6,7 @@ function get(url) {
 	return new Promise(function(resolve, reject) {
 		// Do the usual XHR stuff
 		var req = new XMLHttpRequest();
-		req.open('GET', 'pages/prometto/book/' + url);
+		req.open('GET', '/pages/prometto/book/' + url);
 
 		req.onload = function() {
 			document.body.classList.remove('spinner');
