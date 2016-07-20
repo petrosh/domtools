@@ -42,7 +42,7 @@ var G = {
 			file = window.location.origin + '/pages' + window.location.pathname + 'script.js';
 		if (response.data.message == 'Not Found') return G.loadScript(file);
 		G.refs.ghpages = response.data.object.sha;
-		return G.loadScript([G.rawCdn, G.refs.ghpages, 'pages', file].join('/'));
+		return G.loadScript([G.rawCdn, G.refs.ghpages, 'pages', G.repoFolder, file].join('/'));
 	},
 	ac: function (element, parent) {
 		var target = (parent || document.body);
