@@ -18,11 +18,11 @@ function coo(response){
 	for (var i = 0; i < G.repoCommits.length; i++) {
 		var commessa = G.repoCommits[i];
 		var li = G.domNew('li');
-		var code = G.domNew('code');
-		G.ac(G.domNew('a', commessa.sha.substr(0,7), {href: commessa.html_url}), code);
-		li.innerHTML += '<em>' + commessa.commit.author.date.timeAgo() + '</em> &ndash; ';
+		var code = G.domNew('code', commessa.sha);
+		G.ac(G.domNew('a', commessa.commit.message, {href: commessa.html_url}), li);
+		li.innerHTML += '<br>';
 		G.ac(code, li);
-		li.innerHTML += ' &ndash; <strong>' + commessa.commit.message + '</strong>';
+		li.innerHTML += ' &ndash; <em>' + commessa.commit.author.date.timeAgo() + '</em>';
 		G.ac(li, ul);
 	}
 	if (response.meta.Link) G.ac(G.pagination(response.meta.Link), G.query('section'));
