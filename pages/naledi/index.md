@@ -6,6 +6,7 @@ color: cave
 screenshot: true
 js:
   - naledi
+  - promise
   - fetch
   - ../pages/naledi/script
 ---
@@ -13,4 +14,5 @@ js:
 **Scripts**
 
 - [naledi](/js/naledi.js)
+- [promise](/js/promise.js)
 - [fetch](/js/fetch.js) – from [github/fetch](//github.com/github/fetch)
