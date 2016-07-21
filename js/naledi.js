@@ -47,10 +47,10 @@ Element.prototype.appendChilds = function (elementsArray) {
 
 /*
 *
-* ele.createCustomElement(tag[, inner, attributes])
+* ele.createCustomElement(tag[, inner[, attributes]])
 *
 */
-document.createCustomElement = function (tag, inner, attributes) {
+function createCustomElement (tag, inner, attributes) {
 	var element;
 	if (document.createElement(tag)) element = document.createElement(tag); else return false;
 	if (inner) {
@@ -64,4 +64,4 @@ document.createCustomElement = function (tag, inner, attributes) {
 		}
 	}
 	return element;
-};
+}
