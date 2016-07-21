@@ -18,6 +18,10 @@ js:
 - [naledi](/js/naledi.js)
 - [script]({{ site.baseurl }}/pages{{ page.url | append: '/' }}script.js)
 
+## Github urls
+
+<ul id="variables"></ul>
+
 ## Flow
 
 **`setGithubUrls`**
