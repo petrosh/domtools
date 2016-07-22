@@ -89,7 +89,7 @@ function getGithubUrls (fallback) {
 	rawStatic = ['https://rawgit.com', repoFullname].join('/');
 	rawCdn = ['https://cdn.rawgit.com', repoFullname].join('/');
 	pagePath = loc.pathname.split('/').slice(2).join('/');
-	pageFolder = ['..', 'pages', pagePath].join('/');
+	pageFolder = ['.', 'pages', pagePath].join('/');
 	apiUrl = 'https://api.github.com';
 	repoApi = [apiUrl, 'repos', repoFullname].join('/');
 }

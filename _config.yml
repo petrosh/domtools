@@ -4,6 +4,7 @@ description: Tools for the Document Object Module
 baseurl: /domtools
 url: http://petrosh.github.io/domtools
 github_username:  petrosh
+permalink: pretty
 
 # Files
 js:
