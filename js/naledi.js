@@ -1,5 +1,30 @@
 /*
 *
+* getGithubUrls
+*
+*/
+var repoName, owner, repoFullname, repoUrl, repoHome, pagePath, apiUrl, repoApi, loaderUrl;
+
+function branchRefUrl (branch) {
+	var b = branch || 'gh-pages';
+	return [repoApi, 'git/refs/heads', b].join('/');
+}
+
+function getGithubUrls (location) {
+	var loc = location || window.location;
+	repoName = loc.pathname.split('/')[1];
+	owner = loc.host.split('.')[0];
+	repoFullname = [owner, repoName].join('/');
+	repoUrl = ['https://github.com', repoFullname].join('/');
+	repoHome = ['https://' + owner + '.github.io', repoName].join('/');
+	pagePath = loc.pathname.split('/').slice(2).join('/');
+	apiUrl = 'https://api.github.com';
+	repoApi = [apiUrl, 'repos', repoFullname].join('/');
+	loaderUrl = '../pages/naledi/loader.js'; // normally 'loader.js'
+}
+
+/*
+*
 * str.timeAgo()
 *
 */
@@ -50,7 +75,7 @@ Element.prototype.appendChilds = function (elementsArray) {
 * ele.createCustomElement(tag[, inner[, attributes]])
 *
 */
-function createCustomElement (tag, inner, attributes) {
+function cce (tag, inner, attributes) {
 	var element;
 	if (document.createElement(tag)) element = document.createElement(tag); else return false;
 	if (inner) {
@@ -64,4 +89,16 @@ function createCustomElement (tag, inner, attributes) {
 		}
 	}
 	return element;
+}
+
+function appendScript (url) {
+	document.getElementsByTagName('head')[0].appendChild(
+		cce('script', '', {'src': url})
+	);
+}
+
+
+function setGithubUrls () {
+	var load = (window.location.hostname === '127.0.0.1') ? cce('a', '', {href: 'https://petrosh.github.io/domtools/naledi'}) : '';
+	return getGithubUrls(load);
 }

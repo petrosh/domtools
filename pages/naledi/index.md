@@ -24,27 +24,6 @@ js:
 
 ## Flow
 
-**`setGithubUrls`**
-
-```js
-// Repository
-window.location.pathname.split('/')[1];
-// return string "repository"
-var url = 'https://owner.github.io/repository';
-url.pathname.split('/')[1];
-// split: ["https:", "", "owner.github.io", "repository"]
-
-// Page path
-window.location.pathname.slice(2).join('/');
-// return composed string "page" or "page/deep"
-var url = 'https://owner.github.io/repository';
-url.split('/').slice(2).join('/');
-var url = 'https://owner.github.io/repository/page';
-url.slice(2).join('/');
-url =  'https://owner.github.io/repository/page/deep';
-url.slice(2).join('/');
-```
-
 **`getBranchSha(branch)`**
 
 - Resolved return: `master.object.sha`
