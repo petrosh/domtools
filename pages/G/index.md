@@ -4,6 +4,7 @@ description: All is one
 permalink: /G/
 color: cadetblue
 screenshot: true
+order: 2
 js:
   - G
   - naledi

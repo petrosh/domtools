@@ -4,6 +4,7 @@ description: Live variables
 color: forest
 permalink: /jekyll/
 screenshot: true
+order: 1
 ---
 
 ### Jekyll `site`

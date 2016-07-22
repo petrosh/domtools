@@ -3,6 +3,7 @@ title: Prometto
 permalink: /prometto/
 description: Promise request and print a json book
 color: melma
+order: 3
 js:
   - promise
   - [../pages/prometto/script]

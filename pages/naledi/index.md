@@ -3,6 +3,7 @@ title: naledi
 description: No interfaces, only tools
 permalink: /naledi
 color: cave
+order: 4
 screenshot: true
 js:
   - promise

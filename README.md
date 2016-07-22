@@ -3,7 +3,6 @@ permalink: /
 ---
 **Tools for the Document Object Module**
 
-- [naledi]({{ site.url }}{{ page.url }}naledi)
-- [Prometto]({{ site.url }}{{page.url}}prometto)
-- [G]({{ site.url }}{{page.url}}G)
-- [Jekyll]({{ site.url }}{{page.url}}jekyll)
+{% assign pagine = site.pages | sort: 'order'  %}
+{% for p in pagine reversed %}{% if p.title %}
+- [{{ p.title }}]({{ p.url }}) – {{ p.description }}{% endif %}{% endfor %}
