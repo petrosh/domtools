@@ -17,22 +17,44 @@ js:
 - [fetch.js](/js/fetch.js) – `@version 0.11.1` from [github/fetch](//github.com/github/fetch)
 - [naledi.js](/js/naledi.js)
 - [script.js]({{ site.baseurl }}/pages{{ page.url | append: '/' }}script.js)
+
+```js
+// init with fallback url for local-debug
+setGithubUrls('https://petrosh.github.io/domtools/naledi');
+
+// Load next script
+appendScript('loader');
+```
+
 - `async` [loader.js]({{ site.baseurl }}/pages{{ page.url | append: '/' }}loader.js)
 
-## Github urls
+```js
+// Print message
+monitor('loader.js running');
+
+// Print gh-pages sha
+getRef()
+.then(monitor)
+.catch(errore);
+```
+
+## Results
 
 <ul id="variables"></ul>
 
-## Flow
+## Tools
 
-**`getBranchSha(branch)`**
+**Time**
 
-- Resolved return: `master.object.sha`
-- Then: `appendScript('loader')` – from `cdn.rawgit` with `sha`
-- Catch: `appendScript('loader')` – from `rawgit` with `branch`
+- **`dateString.timeAgo()`**
 
-**`appendScript(url)`**
+**Dom**
 
-- Resolved return: `true`
-- Then: `checkLogged`
-- Catch: `error: script not loaded`
+- **`ele.appendChilds([])`**
+- **`cce(tag[, inner[, attributes]])`**
+- **`appendScript(filename)`**
+
+**GitHub**
+
+- **`getGithubUrls(fallback)`**
+- **`getRef(branch)`**

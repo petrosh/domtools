@@ -59,7 +59,7 @@ Element.prototype.appendChilds = function (elementsArray) {
 
 /*
 *
-* ele.createCustomElement(tag[, inner[, attributes]])
+* cce(tag[, inner[, attributes]])
 *
 */
 function cce (tag, inner, attributes) {
@@ -78,7 +78,8 @@ function cce (tag, inner, attributes) {
 	return element;
 }
 
-function getGithubUrls (fallback) {
+// set variables
+function setGithubUrls (fallback) {
 	var loc = window.location;
 	if (loc.hostname === '127.0.0.1' && fallback !== '') loc = cce('a', '', {href: fallback});
 	repoName = loc.pathname.split('/')[1];
@@ -94,9 +95,42 @@ function getGithubUrls (fallback) {
 	repoApi = [apiUrl, 'repos', repoFullname].join('/');
 }
 
+// append javascript in head
 function appendScript (filename) {
 	var s = [pageFolder, filename + '.js'].join('/');
 	document.getElementsByTagName('head')[0].appendChild(
 		cce('script', '', {'src': s})
 	);
+}
+
+// Error callback
+function errore (e) {
+	console.log('error: ' + e);
+}
+
+// parse JSON
+function jsonize (response) {
+	return response.json();
+}
+
+// get Git Reference for a branch
+function getRef (branch) {
+	var b = branch || 'gh-pages';
+	var options = {
+		header: {'Accept': 'application/vnd.github.v3+json'},
+		cache: 'no-cache'
+	};
+	return fetch(branchRefUrl(b), options)
+		.then(jsonize)
+		.then(function (head) {
+			return head.object.sha;
+		})
+		.catch(function () {
+			return b;
+		})
+		.then(function (ref) {
+			branchRef[b] = ref;
+			return ref;
+		})
+		.catch(errore);
 }
