@@ -1,6 +1,5 @@
-var varout = document.querySelector('#variables');
-
 function monitor (t) {
+	var varout = document.querySelector('#variables');
 	if (t.constructor === Array) {
 		for (var i = 0; i < t.length; i++) {
 			varout.appendChild(cce('li', t[i]));
