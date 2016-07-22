@@ -5,7 +5,7 @@ description: Promise request and print a json book
 color: melma
 js:
   - promise
-  - ../pages/prometto/script
+  - [../pages/prometto/script]
 ---
 
 **Script**
