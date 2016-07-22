@@ -3,24 +3,11 @@
 * getGithubUrls
 *
 */
-var repoName, owner, repoFullname, repoUrl, repoHome, pagePath, apiUrl, repoApi, loaderUrl;
+var repoName, owner, repoFullname, repoUrl, repoHome, pagePath, pageFolder, apiUrl, repoApi, branchRef = {};
 
 function branchRefUrl (branch) {
 	var b = branch || 'gh-pages';
 	return [repoApi, 'git/refs/heads', b].join('/');
-}
-
-function getGithubUrls (location) {
-	var loc = location || window.location;
-	repoName = loc.pathname.split('/')[1];
-	owner = loc.host.split('.')[0];
-	repoFullname = [owner, repoName].join('/');
-	repoUrl = ['https://github.com', repoFullname].join('/');
-	repoHome = ['https://' + owner + '.github.io', repoName].join('/');
-	pagePath = loc.pathname.split('/').slice(2).join('/');
-	apiUrl = 'https://api.github.com';
-	repoApi = [apiUrl, 'repos', repoFullname].join('/');
-	loaderUrl = '../pages/naledi/loader.js'; // normally 'loader.js'
 }
 
 /*
@@ -91,14 +78,25 @@ function cce (tag, inner, attributes) {
 	return element;
 }
 
-function appendScript (url) {
-	document.getElementsByTagName('head')[0].appendChild(
-		cce('script', '', {'src': url})
-	);
+function getGithubUrls (fallback) {
+	var loc = window.location;
+	if (loc.hostname === '127.0.0.1' && fallback !== '') loc = cce('a', '', {href: fallback});
+	repoName = loc.pathname.split('/')[1];
+	owner = loc.host.split('.')[0];
+	repoFullname = [owner, repoName].join('/');
+	repoUrl = ['https://github.com', repoFullname].join('/');
+	repoHome = ['https://' + owner + '.github.io', repoName].join('/');
+	rawStatic = ['https://rawgit.com', repoFullname].join('/');
+	rawCdn = ['https://cdn.rawgit.com', repoFullname].join('/');
+	pagePath = loc.pathname.split('/').slice(2).join('/');
+	pageFolder = ['..', 'pages', pagePath].join('/');
+	apiUrl = 'https://api.github.com';
+	repoApi = [apiUrl, 'repos', repoFullname].join('/');
 }
 
-
-function setGithubUrls () {
-	var load = (window.location.hostname === '127.0.0.1') ? cce('a', '', {href: 'https://petrosh.github.io/domtools/naledi'}) : '';
-	return getGithubUrls(load);
+function appendScript (filename) {
+	var s = [pageFolder, filename + '.js'].join('/');
+	document.getElementsByTagName('head')[0].appendChild(
+		cce('script', '', {'src': s})
+	);
 }

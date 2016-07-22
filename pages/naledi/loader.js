@@ -1,16 +1,31 @@
-varout.appendChild(cce('li', 'loader.js running'));
-
-function logSha (r) {
-	varout.appendChild(cce('li', r.object.sha));
-}
-
 function errore (e) {
-	console.log(e);
+	monitor('error: ' + e);
 }
 
-fetch(branchRefUrl())
-	.then(function(response) {
-    return response.json();
-  })
-	.then(logSha)
-	.catch(errore);
+function jsonize (response) {
+	return response.json();
+}
+
+function getRef (branch) {
+	var b = branch || 'gh-pages';
+	var options = {
+		header: {'Accept': 'application/vnd.github.v3+json'},
+		cache: 'no-cache'
+	};
+	return fetch(branchRefUrl(b), options)
+		.then(jsonize)
+		.then(function (head) {
+			return head.object.sha;
+		})
+		.then(function (ref) {
+			branchRef[b] = ref;
+			return ref;
+		})
+		.catch(errore);
+}
+
+monitor('loader.js running');
+
+getRef()
+.then(monitor)
+.catch(errore);

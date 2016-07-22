@@ -1,19 +1,26 @@
-// var t = new Date().toISOString();
-var section = document.querySelector('section');
-var p = document.createElement('p');
 var varout = document.querySelector('#variables');
 
-setGithubUrls();
-appendScript('../pages/naledi/loader.js');
+function monitor (t) {
+	if (t.constructor === Array) {
+		for (var i = 0; i < t.length; i++) {
+			varout.appendChild(cce('li', t[i]));
+		}
+	} else varout.appendChild(cce('li', t));
+	return t;
+}
 
-varout.appendChilds([
-	cce('li', 'repoName: ' + repoName),
-	cce('li', 'owner: ' + owner),
-	cce('li', 'repoFullname: ' + repoFullname),
-	cce('li', 'repoUrl: ' + repoUrl),
-	cce('li', 'repoHome: ' + repoHome),
-	cce('li', 'pagePath: ' + pagePath),
-	cce('li', 'branchRefUrl: ' + branchRefUrl())
+getGithubUrls('https://petrosh.github.io/domtools/naledi');
+appendScript('loader');
+
+monitor([
+	'repoName: ' + repoName,
+	'owner: ' + owner,
+	'repoFullname: ' + repoFullname,
+	'repoUrl: ' + repoUrl,
+	'repoHome: ' + repoHome,
+	'pagePath: ' + pagePath,
+	'pageFolder: ' + pageFolder,
+	'branchRefUrl(): ' + branchRefUrl()
 ]);
 
 // FETCH
