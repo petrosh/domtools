@@ -9,10 +9,7 @@ permalink: pretty
 # Files
 js:
 css:
-  - normalize
-  - github-markdown
-  - github-syntax
-  - primer-syntax
+  - domtools
   - layout
 
 # Defaults
