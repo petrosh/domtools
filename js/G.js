@@ -40,6 +40,7 @@ var G = {
 		// var file = window.location.href + 'script.js';
 		if (window.location.hostname == "127.0.0.1")
 			file = window.location.origin + '/pages' + window.location.pathname + 'script.js';
+			// file = [window.location.origin, G.repoName, 'pages', G.repoFolder, 'script.js'].join('/');
 		if (response.data.message == 'Not Found') return G.loadScript(file);
 		G.refs.ghpages = response.data.object.sha;
 		return G.loadScript([G.rawCdn, G.refs.ghpages, 'pages', G.repoFolder, file].join('/'));
