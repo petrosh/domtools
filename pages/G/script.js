@@ -1,6 +1,8 @@
 // include README
-G.req([G.repoApi, 'contents', 'pages', G.repoFolder, 'README.md'].join('/'), print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
-// G.req('https://api.github.com/repos/petrosh/domtools/contents/G/README.md', print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
+if (window.location.hostname == "127.0.0.1")
+	G.req('https://api.github.com/repos/petrosh/domtools/contents/pages/G/README.md', print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
+else
+	G.req([G.repoApi, 'contents', 'pages', G.repoFolder, 'README.md'].join('/'), print, 'get', 'application/vnd.github.v3.html', {ref: 'gh-pages'});
 
 function print () {
 	G.query('section').innerHTML += this.toString();
@@ -10,7 +12,7 @@ function print () {
 	G.loadScript([G.repoApi, 'commits?callback=coo'].join('/'));
 }
 
-// show commits for the first page and nuomber of pagination links
+// show commits for the first page and number of pagination links
 function coo(response){
 	G.repoCommits = response.data;
 	var ul = G.domNew('ul');
