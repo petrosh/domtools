@@ -41,3 +41,11 @@ create = function(tagname, attributes, content) {
   return element;
 };
 ```
+
+**Got `Access-Control-Allow-Origin` error: not allowed access**
+
+```js
+get('https://api.github.com/repos/petrosh/domtools/comments', function (xhr) {
+	console.log(xhr.responseText);
+});
+```
