@@ -62,5 +62,5 @@ function scan (owner, repo) {
 		<td>
 			<ol id="snippetrosh"></ol>
 		</td>
-	<tr>
+	</tr>
 </table>
