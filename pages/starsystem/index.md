@@ -40,6 +40,7 @@ function scan (owner, repo) {
 	});
 }
 ```
+
 <table class="triplet">
 	<tr>
 		<th>
