@@ -3,6 +3,7 @@ permalink: /
 ---
 **Tools for the Document Object Module**
 
+- **[Star system](https://petrosh.github.io/domtools/starsystem)** – ashes to ashes
 - **[Pocket knife](https://petrosh.github.io/domtools/pocketknife)** – JS API enrichment in 15448 bytes
 - **[Naledi](https://petrosh.github.io/domtools/prometto)** – No interfaces, only tools
 - **[Prometto](https://petrosh.github.io/domtools/prometto)** – Promise request and print a json book
