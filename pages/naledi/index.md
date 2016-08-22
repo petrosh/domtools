@@ -14,9 +14,9 @@ js:
 
 **Scripts**
 
-- [promise.js](/js/promise.js) – `@version 3.2.2+39aa2571` from [stefanpenner/es6-promise](//github.com/stefanpenner/es6-promise)
-- [fetch.js](/js/fetch.js) – `@version 0.11.1` from [github/fetch](//github.com/github/fetch)
-- [naledi.js](/js/naledi.js)
+- [promise.js]({{ site.baseurl }}/js/promise.js) – `@version 3.2.2+39aa2571` from [stefanpenner/es6-promise](//github.com/stefanpenner/es6-promise)
+- [fetch.js]({{ site.baseurl }}/js/fetch.js) – `@version 0.11.1` from [github/fetch](//github.com/github/fetch)
+- [naledi.js]({{ site.baseurl }}/js/naledi.js)
 - [script.js]({{ site.baseurl }}/pages{{ page.url | append: '/' }}script.js)
 
 ```js
