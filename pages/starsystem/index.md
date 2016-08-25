@@ -2,7 +2,7 @@
 title: Star System
 description: ashes to ashes
 permalink: /starsystem/
-color: lightred wide
+color: lightred
 order: 6
 js:
   - promise
@@ -21,27 +21,11 @@ table.triplet td {
 	vertical-align: top;
 }
 </style>
-**Scripts**
+- [how it works](#how_it_works)
 
-- [promise.js]({{site.baseurl}}/js/promise.js)
-- [fetch.js]({{site.baseurl}}/js/fetch.js)
-- [script.js]({{site.baseurl}}/pages{{ page.url }}script.js)
+<div id="issue"></div>
 
-**Code**
-
-```js
-function scan (owner, repo) {
-	var fullname = [owner, repo].join('/');
-	fetch('https://api.github.com/repos/' + fullname + '/issues', options).then(function (r) {
-		return r.json();
-	}).then(function (arr) {
-		var a = arr.map(stampa).join('');
-		document.getElementById(repo).innerHTML = a;
-	});
-}
-```
-
-<table class="triplet">
+<table class="triplet" id="list">
 	<tr>
 		<th>
 			Diarissues
@@ -65,3 +49,25 @@ function scan (owner, repo) {
 		</td>
 	</tr>
 </table>
+
+<h2 id="how_it_works">How it works</h2>
+
+**Scripts**
+
+- [promise.js]({{site.baseurl}}/js/promise.js)
+- [fetch.js]({{site.baseurl}}/js/fetch.js)
+- [script.js]({{site.baseurl}}/pages{{ page.url }}script.js)
+
+**Code**
+
+```js
+function scan (owner, repo) {
+	var fullname = [owner, repo].join('/');
+	fetch('https://api.github.com/repos/' + fullname + '/issues', options).then(function (r) {
+		return r.json();
+	}).then(function (arr) {
+		var a = arr.map(stampa).join('');
+		document.getElementById(repo).innerHTML = a;
+	});
+}
+```
