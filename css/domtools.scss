@@ -5,3 +5,8 @@ layout: null
 {% include_relative github-markdown.css %}
 {% include_relative github-syntax.css %}
 {% include_relative primer-syntax.css %}
+@import "primer-support/index";
+@import "primer-buttons/index";
+@import "primer-forms/index";
+// @import "corrections";
+@import "layout";

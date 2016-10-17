@@ -1,0 +1,39 @@
+//
+// FORMS & BUTTONS
+//
+
+// Forms and buttons
+input[type="text"],
+input[type="password"]
+	@extend .form-control
+
+input[type="button"],
+input[type="submit"],
+button[type="button"]
+	@extend .btn
+	&.small
+		@extend .btn-sm
+	&.danger
+		@extend .btn-danger
+	&.primary
+		@extend .btn-primary
+	&.outline
+		@extend .btn-outline
+	&.block
+		@extend .btn-block
+
+// Button group
+div.group
+	@extend .btn-group
+
+// Checkbox and Radio
+
+//  Cursor pointer
+input[type="checkbox"]:hover,
+input[type="radio"]:hover
+	cursor: pointer
+
+// Rise upper margin
+input[type=checkbox],
+input[type=radio]
+	margin-right: 0.4em
