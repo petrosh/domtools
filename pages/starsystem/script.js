@@ -77,6 +77,7 @@ function check(url) {
 	}
 }
 
+var logged = loggator();
 check(window.location);
 scan('petrosh', 'diarissues');
 scan('petrosh', 'gitmarks');

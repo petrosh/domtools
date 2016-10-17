@@ -7,6 +7,7 @@ order: 6
 js:
   - promise
   - fetch
+  - loggator
   - [../pages/starsystem/script]
 ---
 <style>
