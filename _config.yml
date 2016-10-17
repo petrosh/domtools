@@ -6,20 +6,22 @@ url: http://petrosh.github.io/domtools
 github_username:  petrosh
 permalink: pretty
 
+sass:
+    style: compressed
+
 # Files
 js:
 css:
   - domtools
-  - layout
 
 # Defaults
 defaults:
-  -
-    scope:
-      path: "" # all files in the project
-    values:
-      layout: "default"
-      screenshot: false
+    -
+        scope:
+            path: "" # all files in the project
+        values:
+            layout: "default"
+            screenshot: false
 
 # Gems
 gems:
@@ -31,6 +33,6 @@ repository: petrosh/domtools
 highlighter: rouge
 markdown: kramdown
 kramdown:
-  input: GFM
-  syntax_highlighter: rouge
-  auto_ids: true
+    input: GFM
+    syntax_highlighter: rouge
+    auto_ids: true
