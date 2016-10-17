@@ -1,6 +1,6 @@
 ---
 title: Reddizza
-description: Backup reddit as markdown
+description: Get reddit as json
 permalink: /reddizza/
 color: reddit
 js:
