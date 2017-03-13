@@ -51,6 +51,12 @@ js:
 var logged = loggator();
 ```
 
+**Return token**
+
+```js
+atob(JSON.parse(atob(localStorage.getItem('fnp'))).token)
+```
+
 **Render**
 
 <p class="js-render"></p>
