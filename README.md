@@ -3,6 +3,7 @@ permalink: /
 ---
 **Tools for the Document Object Module**
 
+- **[Loggator](https://petrosh.github.io/domtools/loggator)** – Brace yourself
 - **[Reddizza](https://petrosh.github.io/domtools/reddizza)** – Get reddit as json
 - **[Star system](https://petrosh.github.io/domtools/starsystem)** – ashes to ashes
 - **[Pocket knife](https://petrosh.github.io/domtools/pocketknife)** – JS API enrichment in 15448 bytes

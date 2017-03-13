@@ -63,7 +63,8 @@ function checkLogin (response) {
 			loginButton.innerHTML = 'Logout';
 			loginButton.addEventListener("click", logout, false);
 		}
-		return true;
+		var localFnp = localStorage.getObject('fnp');
+		return (localFnp && localFnp.token) ? atob(localFnp.token) : false;
 	}
 }
 
